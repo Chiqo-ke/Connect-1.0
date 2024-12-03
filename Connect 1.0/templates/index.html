@@ -1,0 +1,22 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Recognition</title>
+</head>
+<body>
+    <h1>Sign Language Recognition</h1>
+    <button onclick="startRecognition()">Start Recognition</button>
+    <script>
+        function startRecognition() {
+            fetch('/run-sign-recognition')
+                .then(response => response.text())
+                .then(data => alert(data))
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
